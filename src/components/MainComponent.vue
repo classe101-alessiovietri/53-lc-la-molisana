@@ -23,20 +23,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-* {
-	margin: 0;
-	box-sizing: border-box;
-	font-family: Arial, Helvetica, sans-serif;
-
-	&:not(ul) {
-		padding: 0;
-	}
-}
-
-.container {
-	max-width: 800px;
-	margin: 0 auto;
-}
+@use "../assets/scss/partials/layout" as *;
 
 main {
 	padding: 80px 0;

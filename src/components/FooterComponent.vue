@@ -1,13 +1,10 @@
 <script>
+import AppLogo from './AppLogo.vue';
+
 export default {
     name: "FooterComponent",
-    data() {
-        return {
-
-        }
-    },
-    methods: {
-
+    components: {
+        AppLogo
     }
 }
 </script>
@@ -17,7 +14,7 @@ export default {
 		<div class="container">
         	<div class="footer-cols">
 				<div>
-					<img src="../assets/img/la-molisana-logo.png" alt="La Molisana">	
+					<AppLogo />	
 				</div>
 
 				<div>
@@ -91,24 +88,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-* {
-	margin: 0;
-	box-sizing: border-box;
-	font-family: Arial, Helvetica, sans-serif;
-
-	&:not(ul) {
-		padding: 0;
-	}
-}
-
-img {
-	width: 100%;
-}
-
-.container {
-	max-width: 800px;
-	margin: 0 auto;
-}
+@use "../assets/scss/partials/layout" as *;
 
 footer {
 	padding-bottom: 200px;

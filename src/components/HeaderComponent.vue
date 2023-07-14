@@ -1,13 +1,10 @@
 <script>
+import AppLogo from './AppLogo.vue';
+
 export default {
     name: "HeaderComponent",
-    data() {
-        return {
-
-        }
-    },
-    methods: {
-
+    components: {
+        AppLogo
     }
 }
 </script>
@@ -16,9 +13,7 @@ export default {
     <header>
 		<div class="container">
 			<div class="center-all">
-				<div>
-					<img src="../assets/img/la-molisana-logo.png" alt="La Molisana">	
-				</div>
+				<AppLogo />
 
 				<ul>
 					<li>
@@ -48,24 +43,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-* {
-	margin: 0;
-	box-sizing: border-box;
-	font-family: Arial, Helvetica, sans-serif;
-
-	&:not(ul) {
-		padding: 0;
-	}
-}
-
-img {
-	width: 100%;
-}
-
-.container {
-	max-width: 800px;
-	margin: 0 auto;
-}
+@use "../assets/scss/partials/layout" as *;
 
 .center-all {
 	display: flex;
