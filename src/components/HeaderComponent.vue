@@ -14,13 +14,96 @@ export default {
 
 <template>
     <header>
-        HEADER
+		<div class="container">
+			<div class="center-all">
+				<div>
+					<img src="../assets/img/la-molisana-logo.png" alt="La Molisana">	
+				</div>
+
+				<ul>
+					<li>
+						<a href="#">
+							Home
+						</a>
+					</li>
+					<li>
+						<a href="#" class="active">
+							Prodotti
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Chi Siamo
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Contatti
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
     </header>
 </template>
 
 <style lang="scss" scoped>
+* {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+
+	&:not(ul) {
+		padding: 0;
+	}
+}
+
+img {
+	width: 100%;
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.center-all {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 header {
-    padding: 40px;
-    text-align: center;
+	margin-bottom: 50px;
+
+	> div {
+		margin-bottom: 30px;
+	}
+
+	ul {
+		display: flex;
+		list-style: none;
+		padding: 0;
+
+		li {
+			a {
+				display: inline-block;
+				padding: 15px;
+				color: black;
+				text-decoration: none;
+				font-size: 1.3rem;
+				transition: .2s all ease-in-out;
+
+				&:hover,		// header ul li a:hover
+				&.active {		// header ul li a.active -> selezione sull'elemento
+					background-color: cadetblue;
+				}
+
+				// .active {		// header ul li a .active -> selezione sul figlio
+				// 	background-color: cadetblue;
+				// }
+			}
+		}
+	}
 }
 </style>

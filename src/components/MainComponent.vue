@@ -14,14 +14,40 @@ export default {
 
 <template>
     <main>
-        MAIN
+		<div class="container">
+			<h1>
+				--] Content goes here [--
+			</h1>
+		</div>
     </main>
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/scss/partials/variables.scss" as *;
+* {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+
+	&:not(ul) {
+		padding: 0;
+	}
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+}
 
 main {
-    padding: $main-padding;
+	padding: 80px 0;
+	background-image: url('../assets/img/fondo-pag-speciali.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	h1 {
+		color: blue;
+		text-align: center;
+	}
 }
 </style>
