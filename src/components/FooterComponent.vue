@@ -1,11 +1,69 @@
 <script>
 import AppLogo from './AppLogo.vue';
+import FooterLink from './FooterLink.vue';
 
 export default {
     name: "FooterComponent",
     components: {
-        AppLogo
-    }
+        AppLogo,
+		FooterLink
+    },
+	data() {
+		return {
+			columnTwoLinks: [
+				{
+					url: '#',
+					label: 'Link 1',
+				},
+				{
+					url: '#',
+					label: 'Link 2',
+				},
+				{
+					url: '#',
+					label: 'Link 3',
+				},
+				{
+					url: '#',
+					label: 'Link 4',
+				},
+				{
+					url: '#',
+					label: 'Link 5',
+				},
+				{
+					url: '#',
+					label: 'Link 6',
+				},
+			],
+			columnThreeLinks: [
+				{
+					url: '#',
+					label: 'Link A',
+				},
+				{
+					url: '#',
+					label: 'Link B',
+				},
+				{
+					url: '#',
+					label: 'Link C',
+				},
+				{
+					url: '#',
+					label: 'Link D',
+				},
+				{
+					url: '#',
+					label: 'Link E',
+				},
+				{
+					url: '#',
+					label: 'Link F',
+				},
+			]
+		};
+	}
 }
 </script>
 
@@ -22,31 +80,10 @@ export default {
 						Pastificio
 					</h4>
 					<ul>
-						<li>
-							<a href="#">
-								Link
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Link
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Link
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Link
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Link
-							</a>
-						</li>
+						<FooterLink
+							v-for="(singleLink, index) in columnTwoLinks" :key="index"
+							:url="singleLink.url"
+							:label="singleLink.label" />
 					</ul>
 				</div>
 
@@ -55,31 +92,10 @@ export default {
 						Prodotti
 					</h4>
 					<ul>
-						<li>
-							<a href="#">
-								Link
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Link
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Link
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Link
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Link
-							</a>
-						</li>
+						<FooterLink class="footer-link"
+							v-for="(singleLink, index) in columnThreeLinks" :key="index"
+							:url="singleLink.url"
+							:label="singleLink.label" />
 					</ul>
 				</div>
 			</div>
@@ -88,8 +104,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/scss/partials/layout" as *;
-
 footer {
 	padding-bottom: 200px;
 	background-image: url('../assets/img/footer-montagne-bottom.jpg');
@@ -116,14 +130,6 @@ footer {
 	ul {
 		list-style: none;
 		padding: 0;
-
-		li {
-			a {
-				display: inline-block;
-				padding: 5px 0;
-				color: black;
-			}
-		}
 	}
 }
 </style>

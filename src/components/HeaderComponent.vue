@@ -43,8 +43,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/scss/partials/layout" as *;
-
 .center-all {
 	display: flex;
 	flex-direction: column;

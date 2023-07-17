@@ -125,11 +125,7 @@ export default {
     </main>
 </template>
 
-<style lang="scss" scoped>
-@use "../assets/scss/partials/layout" as *;
-
-$main-color: blue;
-
+<style lang="scss">
 main {
     padding: 80px 0;
     background-image: url("../assets/img/fondo-pag-speciali.jpg");
